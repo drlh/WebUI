@@ -30,30 +30,18 @@ public class MainFrame extends javax.swing.JFrame {
 
         jSplit_toolbarTabs = new javax.swing.JSplitPane();
         jTabPane_MapTabs = new javax.swing.JTabbedPane();
-        jPan_Toolbar = new javax.swing.JPanel();
         jMenuBar_mainMenu = new javax.swing.JMenuBar();
         jMenu_File = new javax.swing.JMenu();
         jMenuItem_NewMap = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem_Quit = new javax.swing.JMenuItem();
         jMenu_Edit = new javax.swing.JMenu();
         jMenu_Help = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WebUI - ImageMapEditor");
 
-        jSplit_toolbarTabs.setRightComponent(jTabPane_MapTabs);
-
-        javax.swing.GroupLayout jPan_ToolbarLayout = new javax.swing.GroupLayout(jPan_Toolbar);
-        jPan_Toolbar.setLayout(jPan_ToolbarLayout);
-        jPan_ToolbarLayout.setHorizontalGroup(
-            jPan_ToolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPan_ToolbarLayout.setVerticalGroup(
-            jPan_ToolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
-        );
-
-        jSplit_toolbarTabs.setLeftComponent(jPan_Toolbar);
+        jSplit_toolbarTabs.setLeftComponent(jTabPane_MapTabs);
 
         getContentPane().add(jSplit_toolbarTabs, java.awt.BorderLayout.CENTER);
 
@@ -62,6 +50,11 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuItem_NewMap.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem_NewMap.setText("Neu...");
         jMenu_File.add(jMenuItem_NewMap);
+        jMenu_File.add(jSeparator1);
+
+        jMenuItem_Quit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem_Quit.setText("Beenden");
+        jMenu_File.add(jMenuItem_Quit);
 
         jMenuBar_mainMenu.add(jMenu_File);
 
@@ -114,10 +107,11 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar jMenuBar_mainMenu;
     private javax.swing.JMenuItem jMenuItem_NewMap;
+    private javax.swing.JMenuItem jMenuItem_Quit;
     private javax.swing.JMenu jMenu_Edit;
     private javax.swing.JMenu jMenu_File;
     private javax.swing.JMenu jMenu_Help;
-    private javax.swing.JPanel jPan_Toolbar;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JSplitPane jSplit_toolbarTabs;
     private javax.swing.JTabbedPane jTabPane_MapTabs;
     // End of variables declaration//GEN-END:variables
