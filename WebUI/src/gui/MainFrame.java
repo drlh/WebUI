@@ -37,6 +37,7 @@ public class MainFrame extends javax.swing.JFrame {
         jToggleButton8 = new javax.swing.JToggleButton();
         jToggleButton9 = new javax.swing.JToggleButton();
         jToggleButton10 = new javax.swing.JToggleButton();
+        jPan_SelectedColor = new javax.swing.JPanel();
         jTabPane_ImageMaps = new javax.swing.JTabbedPane();
         jToolBar_Maintools = new javax.swing.JToolBar();
         jBtn_New = new javax.swing.JButton();
@@ -63,7 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPan_EditTools.setPreferredSize(new java.awt.Dimension(140, 100));
         jPan_EditTools.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jToggleButton2.setToolTipText("Rechteck");
+        jToggleButton2.setToolTipText("Kreis");
         jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPan_EditTools.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 30, 30));
 
@@ -76,7 +77,7 @@ public class MainFrame extends javax.swing.JFrame {
         jToggleButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPan_EditTools.add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 30, 30));
 
-        jToggleButton6.setToolTipText("Rechteck");
+        jToggleButton6.setToolTipText("Ellipse");
         jToggleButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPan_EditTools.add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 30, 30));
 
@@ -84,17 +85,20 @@ public class MainFrame extends javax.swing.JFrame {
         jToggleButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPan_EditTools.add(jToggleButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 30, 30));
 
-        jToggleButton8.setToolTipText("Verschieben");
+        jToggleButton8.setToolTipText("Text");
         jToggleButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPan_EditTools.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 30, 30));
 
-        jToggleButton9.setToolTipText("Rechteck");
+        jToggleButton9.setToolTipText("Zeichnen");
         jToggleButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPan_EditTools.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 30, 30));
 
         jToggleButton10.setToolTipText("Rechteck");
         jToggleButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         jPan_EditTools.add(jToggleButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 30, 30));
+
+        jPan_SelectedColor.setBackground(new java.awt.Color(255, 255, 255));
+        jPan_EditTools.add(jPan_SelectedColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 30, 30));
 
         getContentPane().add(jPan_EditTools, java.awt.BorderLayout.LINE_START);
         getContentPane().add(jTabPane_ImageMaps, java.awt.BorderLayout.CENTER);
@@ -213,6 +217,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_File;
     private javax.swing.JMenu jMenu_Help;
     private javax.swing.JPanel jPan_EditTools;
+    private javax.swing.JPanel jPan_SelectedColor;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTabbedPane jTabPane_ImageMaps;
     private javax.swing.JToggleButton jToggleButton10;
