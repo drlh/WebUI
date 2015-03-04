@@ -28,15 +28,14 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCC_ChooseObjectColor = new javax.swing.JColorChooser();
         jPan_EditTools = new javax.swing.JPanel();
         jTBtn_Circle = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        jTBtn_Drag = new javax.swing.JToggleButton();
         jTBtn_Square = new javax.swing.JToggleButton();
         jTBtn_Ellipse = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
-        jToggleButton10 = new javax.swing.JToggleButton();
-        jToggleButton11 = new javax.swing.JToggleButton();
+        jTBtn_Text = new javax.swing.JToggleButton();
+        jTBtn_Draw = new javax.swing.JToggleButton();
         jBtn_ColorChooser = new javax.swing.JButton();
         jTabPane_ImageMaps = new javax.swing.JTabbedPane();
         jToolBar_Maintools = new javax.swing.JToolBar();
@@ -66,40 +65,33 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTBtn_Circle.setToolTipText("Kreis");
         jTBtn_Circle.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Circle, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 30, 30));
+        jPan_EditTools.add(jTBtn_Circle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 30, 30));
 
-        jToggleButton4.setSelected(true);
-        jToggleButton4.setToolTipText("Verschieben");
-        jToggleButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 30, 30));
+        jTBtn_Drag.setSelected(true);
+        jTBtn_Drag.setToolTipText("Verschieben");
+        jTBtn_Drag.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jPan_EditTools.add(jTBtn_Drag, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 30, 30));
 
         jTBtn_Square.setToolTipText("Rechteck");
         jTBtn_Square.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Square, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 30, 30));
+        jPan_EditTools.add(jTBtn_Square, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 30, 30));
 
         jTBtn_Ellipse.setToolTipText("Ellipse");
         jTBtn_Ellipse.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Ellipse, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 30, 30));
+        jPan_EditTools.add(jTBtn_Ellipse, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 30, 30));
 
-        jToggleButton8.setToolTipText("Text");
-        jToggleButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 30, 30));
+        jTBtn_Text.setToolTipText("Text");
+        jTBtn_Text.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jPan_EditTools.add(jTBtn_Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 30, 30));
 
-        jToggleButton9.setToolTipText("Zeichnen");
-        jToggleButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 30, 30));
+        jTBtn_Draw.setToolTipText("Zeichnen");
+        jTBtn_Draw.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jPan_EditTools.add(jTBtn_Draw, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 30, 30));
 
-        jToggleButton10.setToolTipText("Rechteck");
-        jToggleButton10.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jToggleButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 30, 30));
-
-        jToggleButton11.setToolTipText("Rechteck");
-        jToggleButton11.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jToggleButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 30, 30));
-
-        jBtn_ColorChooser.setPreferredSize(new java.awt.Dimension(33, 9));
+        jBtn_ColorChooser.setBackground(new java.awt.Color(255, 255, 255));
+        jBtn_ColorChooser.setToolTipText("Klicken um eine andere Farbe zu wählen");
         jBtn_ColorChooser.setRolloverEnabled(false);
-        jPan_EditTools.add(jBtn_ColorChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 30, 30));
+        jPan_EditTools.add(jBtn_ColorChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 30, 30));
 
         getContentPane().add(jPan_EditTools, java.awt.BorderLayout.LINE_START);
         getContentPane().add(jTabPane_ImageMaps, java.awt.BorderLayout.CENTER);
@@ -209,6 +201,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jBtn_Open;
     private javax.swing.JButton jBtn_Save;
     private javax.swing.JButton jBtn_SaveAs;
+    private javax.swing.JColorChooser jCC_ChooseObjectColor;
     private javax.swing.JMenuBar jMenuBar_mainMenu;
     private javax.swing.JMenuItem jMenuItem_NewMap;
     private javax.swing.JMenuItem jMenuItem_Open;
@@ -221,14 +214,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPan_EditTools;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JToggleButton jTBtn_Circle;
+    private javax.swing.JToggleButton jTBtn_Drag;
+    private javax.swing.JToggleButton jTBtn_Draw;
     private javax.swing.JToggleButton jTBtn_Ellipse;
     private javax.swing.JToggleButton jTBtn_Square;
+    private javax.swing.JToggleButton jTBtn_Text;
     private javax.swing.JTabbedPane jTabPane_ImageMaps;
-    private javax.swing.JToggleButton jToggleButton10;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
     private javax.swing.JToolBar jToolBar_Maintools;
     // End of variables declaration//GEN-END:variables
 }
