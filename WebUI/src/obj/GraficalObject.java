@@ -21,6 +21,10 @@ public abstract class GraficalObject {
     public Color getColor() {
         return col;
     }
+    public void setColor(Color col) {
+        this.col = col;
+    }
     
     public abstract void getCoordinates();
+    public abstract void setCoordinates(String coordinates);
 }
