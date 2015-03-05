@@ -35,8 +35,12 @@ public class MainFrame extends javax.swing.JFrame {
         jTBtn_Square = new javax.swing.JToggleButton();
         jTBtn_Ellipse = new javax.swing.JToggleButton();
         jTBtn_Text = new javax.swing.JToggleButton();
-        jTBtn_Draw = new javax.swing.JToggleButton();
+        jTBtn_Quadrat = new javax.swing.JToggleButton();
         jBtn_ColorChooser = new javax.swing.JButton();
+        jTBtn_Polygon = new javax.swing.JToggleButton();
+        jTBtn_Img = new javax.swing.JToggleButton();
+        jScrollPane_ObjectList = new javax.swing.JScrollPane();
+        jList_Objects = new javax.swing.JList();
         jTabPane_ImageMaps = new javax.swing.JTabbedPane();
         jToolBar_Maintools = new javax.swing.JToolBar();
         jBtn_New = new javax.swing.JButton();
@@ -56,55 +60,114 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WebUI - ImageMapEditor");
+        setMinimumSize(new java.awt.Dimension(500, 500));
+        setPreferredSize(new java.awt.Dimension(500, 500));
 
         jPan_EditTools.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tools", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(102, 102, 102)));
-        jPan_EditTools.setMinimumSize(new java.awt.Dimension(140, 10));
+        jPan_EditTools.setMinimumSize(new java.awt.Dimension(130, 10));
         jPan_EditTools.setName(""); // NOI18N
-        jPan_EditTools.setPreferredSize(new java.awt.Dimension(140, 100));
-        jPan_EditTools.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPan_EditTools.setPreferredSize(new java.awt.Dimension(130, 100));
 
         jTBtn_Circle.setToolTipText("Kreis");
         jTBtn_Circle.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Circle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 30, 30));
 
         jTBtn_Drag.setSelected(true);
         jTBtn_Drag.setToolTipText("Verschieben");
         jTBtn_Drag.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Drag, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 30, 30));
 
         jTBtn_Square.setToolTipText("Rechteck");
         jTBtn_Square.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Square, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 30, 30));
 
         jTBtn_Ellipse.setToolTipText("Ellipse");
         jTBtn_Ellipse.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Ellipse, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 30, 30));
 
         jTBtn_Text.setToolTipText("Text");
         jTBtn_Text.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 30, 30));
 
-        jTBtn_Draw.setToolTipText("Zeichnen");
-        jTBtn_Draw.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
-        jPan_EditTools.add(jTBtn_Draw, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 30, 30));
+        jTBtn_Quadrat.setToolTipText("Quadrat");
+        jTBtn_Quadrat.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
         jBtn_ColorChooser.setBackground(new java.awt.Color(255, 255, 255));
         jBtn_ColorChooser.setToolTipText("Klicken um eine andere Farbe zu wählen");
         jBtn_ColorChooser.setRolloverEnabled(false);
-        jPan_EditTools.add(jBtn_ColorChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 30, 30));
+
+        jTBtn_Polygon.setToolTipText("Polygon");
+        jTBtn_Polygon.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+
+        jTBtn_Img.setToolTipText("Bild");
+        jTBtn_Img.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+
+        jList_Objects.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane_ObjectList.setViewportView(jList_Objects);
+
+        javax.swing.GroupLayout jPan_EditToolsLayout = new javax.swing.GroupLayout(jPan_EditTools);
+        jPan_EditTools.setLayout(jPan_EditToolsLayout);
+        jPan_EditToolsLayout.setHorizontalGroup(
+            jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(jTBtn_Drag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(jTBtn_Square, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(jTBtn_Quadrat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(jTBtn_Polygon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                            .addGap(4, 4, 4)
+                            .addComponent(jTBtn_Img, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(jTBtn_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(4, 4, Short.MAX_VALUE))
+        );
+        jPan_EditToolsLayout.setVerticalGroup(
+            jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTBtn_Drag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTBtn_Square, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTBtn_Quadrat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTBtn_Polygon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTBtn_Img, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTBtn_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         getContentPane().add(jPan_EditTools, java.awt.BorderLayout.LINE_START);
         getContentPane().add(jTabPane_ImageMaps, java.awt.BorderLayout.CENTER);
 
         jToolBar_Maintools.setRollover(true);
 
-        jBtn_New.setText("Neue Image Map");
+        jBtn_New.setText("Neu");
         jBtn_New.setFocusable(false);
         jBtn_New.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtn_New.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar_Maintools.add(jBtn_New);
 
-        jBtn_Open.setText("Öffnen");
+        jBtn_Open.setText("Öffnen...");
         jBtn_Open.setFocusable(false);
         jBtn_Open.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtn_Open.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -202,6 +265,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jBtn_Save;
     private javax.swing.JButton jBtn_SaveAs;
     private javax.swing.JColorChooser jCC_ChooseObjectColor;
+    private javax.swing.JList jList_Objects;
     private javax.swing.JMenuBar jMenuBar_mainMenu;
     private javax.swing.JMenuItem jMenuItem_NewMap;
     private javax.swing.JMenuItem jMenuItem_Open;
@@ -212,11 +276,14 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_File;
     private javax.swing.JMenu jMenu_Help;
     private javax.swing.JPanel jPan_EditTools;
+    private javax.swing.JScrollPane jScrollPane_ObjectList;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JToggleButton jTBtn_Circle;
     private javax.swing.JToggleButton jTBtn_Drag;
-    private javax.swing.JToggleButton jTBtn_Draw;
     private javax.swing.JToggleButton jTBtn_Ellipse;
+    private javax.swing.JToggleButton jTBtn_Img;
+    private javax.swing.JToggleButton jTBtn_Polygon;
+    private javax.swing.JToggleButton jTBtn_Quadrat;
     private javax.swing.JToggleButton jTBtn_Square;
     private javax.swing.JToggleButton jTBtn_Text;
     private javax.swing.JTabbedPane jTabPane_ImageMaps;
