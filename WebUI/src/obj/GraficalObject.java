@@ -6,6 +6,7 @@
 package obj;
 
 import java.awt.Color;
+import javax.swing.JPopupMenu;
 
 /**
  *
@@ -14,6 +15,7 @@ import java.awt.Color;
 public abstract class GraficalObject {
 
     private Color col = new Color(0, 0, 0);
+    private JPopupMenu contextMenu =  new JPopupMenu();
 
     public GraficalObject() {
     }
@@ -27,4 +29,5 @@ public abstract class GraficalObject {
     
     public abstract void getCoordinates();
     public abstract void setCoordinates(String coordinates);
+    public abstract void drawObject();
 }

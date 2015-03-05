@@ -5,7 +5,7 @@
  */
 package gui;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 import obj.GraficalObject;
 
 /**
@@ -17,7 +17,6 @@ public class ImageMapPanel extends JPanel {
     private GraficalObject[] objects = new GraficalObject[300];
     private String saveTo;
     private String source;
-    
 
     public ImageMapPanel() {
     }
