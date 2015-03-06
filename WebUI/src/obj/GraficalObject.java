@@ -15,19 +15,33 @@ import javax.swing.JPopupMenu;
 public abstract class GraficalObject {
 
     private Color col = new Color(0, 0, 0);
-    private JPopupMenu contextMenu =  new JPopupMenu();
+    private JPopupMenu contextMenu = new JPopupMenu();
+    private String href = "";
 
     public GraficalObject() {
+    }
+
+    public String getHref() {
+        return this.href;
+    }
+
+    public void setHref(String href) {
+        this.href = href;
     }
 
     public Color getColor() {
         return col;
     }
+
     public void setColor(Color col) {
         this.col = col;
     }
-    
+
     public abstract void getCoordinates();
+
     public abstract void setCoordinates(String coordinates);
+
     public abstract void drawObject();
+
+    public abstract String getMapCode();
 }
