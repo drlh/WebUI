@@ -6,6 +6,7 @@
 package obj;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 import javax.swing.JPopupMenu;
 
 /**
@@ -17,6 +18,7 @@ public abstract class GraficalObject {
     private Color col = new Color(0, 0, 0);
     private JPopupMenu contextMenu = new JPopupMenu();
     private String href = "";
+    private String alt = "";
     private int[] coords;
 
     public GraficalObject() {
@@ -28,6 +30,13 @@ public abstract class GraficalObject {
 
     public void setHref(String href) {
         this.href = href;
+    }
+       public String getAlt() {
+        return this.alt;
+    }
+
+    public void setAlt(String alt) {
+        this.alt = alt;
     }
 
     public Color getColor() {
@@ -42,7 +51,7 @@ public abstract class GraficalObject {
 
     public abstract void setCoordinates(String coordinate); //each split by ","
 
-    public abstract void drawObject();
+    public abstract void draw(Graphics2D g);
 
     public abstract String getMapCode();
 }

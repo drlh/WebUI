@@ -5,6 +5,8 @@
  */
 package obj;
 
+import java.awt.Graphics2D;
+
 /**
  *
  * @author PR050736
@@ -15,13 +17,8 @@ public class Cricle extends GraficalObject {
     private int[] coords = new int[3];
 
     @Override
-    public void drawObject() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public String getMapCode() {
-        String mapcode = "<area coords=\"" + getCoordinates() + "\" shape=\"circle\">";
+        String mapcode = "<area alt=\"" + getAlt() + "\" href=\"" + getHref() + "\" coords=\"" + getCoordinates() + "\" shape=\"circle\">";
         return mapcode;
     }
 
@@ -43,6 +40,11 @@ public class Cricle extends GraficalObject {
         coords[0] = x;
         coords[1] = y;
         coords[2] = rad;
+
+    }
+
+    @Override
+    public void draw(Graphics2D g) {
         
     }
 
