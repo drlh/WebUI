@@ -17,6 +17,7 @@ public abstract class GraficalObject {
     private Color col = new Color(0, 0, 0);
     private JPopupMenu contextMenu = new JPopupMenu();
     private String href = "";
+    private int[] coords;
 
     public GraficalObject() {
     }
@@ -37,9 +38,9 @@ public abstract class GraficalObject {
         this.col = col;
     }
 
-    public abstract void getCoordinates();
+    public abstract String getCoordinates();
 
-    public abstract void setCoordinates(String coordinates);
+    public abstract void setCoordinates(String coordinate); //each split by ","
 
     public abstract void drawObject();
 

@@ -12,16 +12,7 @@ package obj;
 public class Cricle extends GraficalObject {
 
     private int rad, x, y;
-
-    @Override
-    public void getCoordinates() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setCoordinates(String coordinates) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private int[] coords = new int[3];
 
     @Override
     public void drawObject() {
@@ -30,8 +21,22 @@ public class Cricle extends GraficalObject {
 
     @Override
     public String getMapCode() {
-        String mapcode = "";
+        String mapcode = "<area coords=\"" + getCoordinates() + "\" shape=\"circle\">";
         return mapcode;
+    }
+
+    @Override
+    public String getCoordinates() {
+        String c = "";
+        for (int i = 0; i < coords.length; i++) {
+            c += coords[i] + ",";
+        }
+        return c;
+    }
+
+    @Override
+    public void setCoordinates(String coordinates) {
+        
     }
 
 }
