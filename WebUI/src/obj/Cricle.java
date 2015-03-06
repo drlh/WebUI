@@ -36,6 +36,13 @@ public class Cricle extends GraficalObject {
 
     @Override
     public void setCoordinates(String coordinates) {
+        String[] split = coordinates.split(",");
+        x = Integer.parseInt(split[0]);
+        y = Integer.parseInt(split[1]);
+        rad = Integer.parseInt(split[2]);
+        coords[0] = x;
+        coords[1] = y;
+        coords[2] = rad;
         
     }
 
