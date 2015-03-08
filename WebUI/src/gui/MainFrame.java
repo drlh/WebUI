@@ -29,6 +29,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jCC_ChooseObjectColor = new javax.swing.JColorChooser();
+        jBtnGroup_Tools = new javax.swing.ButtonGroup();
         jPan_EditTools = new javax.swing.JPanel();
         jTBtn_Circle = new javax.swing.JToggleButton();
         jTBtn_Drag = new javax.swing.JToggleButton();
@@ -68,22 +69,28 @@ public class MainFrame extends javax.swing.JFrame {
         jPan_EditTools.setName(""); // NOI18N
         jPan_EditTools.setPreferredSize(new java.awt.Dimension(130, 100));
 
+        jBtnGroup_Tools.add(jTBtn_Circle);
         jTBtn_Circle.setToolTipText("Kreis");
         jTBtn_Circle.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
+        jBtnGroup_Tools.add(jTBtn_Drag);
         jTBtn_Drag.setSelected(true);
         jTBtn_Drag.setToolTipText("Verschieben");
         jTBtn_Drag.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
+        jBtnGroup_Tools.add(jTBtn_Square);
         jTBtn_Square.setToolTipText("Rechteck");
         jTBtn_Square.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
+        jBtnGroup_Tools.add(jTBtn_Ellipse);
         jTBtn_Ellipse.setToolTipText("Ellipse");
         jTBtn_Ellipse.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
+        jBtnGroup_Tools.add(jTBtn_Text);
         jTBtn_Text.setToolTipText("Text");
         jTBtn_Text.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
+        jBtnGroup_Tools.add(jTBtn_Quadrat);
         jTBtn_Quadrat.setToolTipText("Quadrat");
         jTBtn_Quadrat.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
@@ -91,9 +98,11 @@ public class MainFrame extends javax.swing.JFrame {
         jBtn_ColorChooser.setToolTipText("Klicken um eine andere Farbe zu wählen");
         jBtn_ColorChooser.setRolloverEnabled(false);
 
+        jBtnGroup_Tools.add(jTBtn_Polygon);
         jTBtn_Polygon.setToolTipText("Polygon");
         jTBtn_Polygon.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
+        jBtnGroup_Tools.add(jTBtn_Img);
         jTBtn_Img.setToolTipText("Bild");
         jTBtn_Img.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
 
@@ -264,6 +273,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup jBtnGroup_Tools;
     private javax.swing.JButton jBtn_ColorChooser;
     private javax.swing.JButton jBtn_New;
     private javax.swing.JButton jBtn_Open;

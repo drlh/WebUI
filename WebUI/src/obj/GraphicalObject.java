@@ -7,21 +7,25 @@ package obj;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.*;
+import java.io.Serializable;
 import javax.swing.JPopupMenu;
 
 /**
  *
  * @author Fabian Angst
  */
-public abstract class GraficalObject {
+public abstract class GraphicalObject implements Serializable {
 
-    private Color col = new Color(0, 0, 0);
-    private JPopupMenu contextMenu = new JPopupMenu();
+    protected Color col;
+    protected Rectangle r;
     private String href = "";
     private String alt = "";
     private int[] coords;
 
-    public GraficalObject() {
+    public GraphicalObject(Color col, int x, int y, int width, int height) {
+        this.col = col;
+        r = new Rectangle(x, y, width, height);
     }
 
     public String getHref() {
@@ -31,7 +35,8 @@ public abstract class GraficalObject {
     public void setHref(String href) {
         this.href = href;
     }
-       public String getAlt() {
+
+    public String getAlt() {
         return this.alt;
     }
 
@@ -54,4 +59,14 @@ public abstract class GraficalObject {
     public abstract void draw(Graphics2D g);
 
     public abstract String getMapCode();
+
+    public abstract boolean contains(Point p);
+
+    public Rectangle getR() {
+        return r;
+    }
+
+    public void setR(Rectangle r) {
+        this.r = r;
+    }
 }

@@ -4,6 +4,8 @@
   <NonVisualComponents>
     <Component class="javax.swing.JColorChooser" name="jCC_ChooseObjectColor">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="jBtnGroup_Tools">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar_mainMenu">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu_File">
@@ -203,6 +205,9 @@
       <SubComponents>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Circle">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Kreis"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Verschiebecursor"/>
@@ -211,6 +216,9 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Drag">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="selected" type="boolean" value="true"/>
             <Property name="toolTipText" type="java.lang.String" value="Verschieben"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -220,6 +228,9 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Square">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Rechteck"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Verschiebecursor"/>
@@ -228,6 +239,9 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Ellipse">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Ellipse"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Verschiebecursor"/>
@@ -236,6 +250,9 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Text">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Text"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Verschiebecursor"/>
@@ -244,6 +261,9 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Quadrat">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Quadrat"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Verschiebecursor"/>
@@ -261,6 +281,9 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Polygon">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Polygon"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Verschiebecursor"/>
@@ -269,6 +292,9 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Img">
           <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="jBtnGroup_Tools"/>
+            </Property>
             <Property name="toolTipText" type="java.lang.String" value="Bild"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Verschiebecursor"/>

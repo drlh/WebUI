@@ -1,15 +1,22 @@
 package obj;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Point;
 
 /**
  *
  * @author PR050736
  */
-public class Cricle extends GraficalObject {
+public class CircleObject extends GraphicalObject {
 
     private int rad, x;
     private int[] coords = new int[3];
+
+    public CircleObject(Color col, int x, int y, int width, int height) {
+        super(col, x, y, width, height);
+        this.col = col;
+    }
 
     @Override
     public String getMapCode() {
@@ -40,6 +47,11 @@ public class Cricle extends GraficalObject {
     @Override
     public void draw(Graphics2D g) {
         g.drawOval(x, x, rad, rad);
+    }
+
+    @Override
+    public boolean contains(Point p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
