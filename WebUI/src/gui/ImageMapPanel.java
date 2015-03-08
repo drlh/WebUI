@@ -55,6 +55,9 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         addMouseListener(this);
         addMouseMotionListener(this);
 
+        popup.add(setLink);
+        popup.add(altLitel);
+        popup.addSeparator();
         popup.add(moveTop);
         popup.add(moveBack);
         popup.addSeparator();

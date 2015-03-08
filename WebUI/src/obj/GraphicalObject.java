@@ -28,6 +28,8 @@ public abstract class GraphicalObject implements Serializable {
         r = new Rectangle(x, y, width, height);
     }
 
+    public abstract String getObjectInfo();
+
     public String getHref() {
         return this.href;
     }
