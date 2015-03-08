@@ -1,6 +1,5 @@
 package gui;
 
-import obj.PentagonObject;
 import java.awt.*;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -180,7 +179,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
             s.draw(gr);
         }
 
-        if ((tool == SQUARE_TOOL || tool == CIRCLE_TOOL || tool == TRIANGLE_TOOL)
+        if ((tool == SQUARE_TOOL || tool == CIRCLE_TOOL || tool == TRIANGLE_TOOL || tool == HEXAGON_TOOL || tool == PENTAGON_TOOL)
                 && startPoint != null && currentPoint != null) {
             Rectangle r = calcRect();
             gr.setStroke(stroke);

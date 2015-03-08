@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package obj;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
-import obj.GraphicalObject;
 
 /**
  *
  * @author PR050736
  */
-class HexagonObject extends GraphicalObject {
+public class HexagonObject extends GraphicalObject {
 
     public HexagonObject(Color col, int x, int y, int width, int height) {
         super(col, x, y, width, height);
