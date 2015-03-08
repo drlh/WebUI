@@ -85,6 +85,9 @@
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowOpened" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowOpened"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -210,7 +213,7 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Kreis"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
         </Component>
@@ -222,9 +225,12 @@
             <Property name="selected" type="boolean" value="true"/>
             <Property name="toolTipText" type="java.lang.String" value="Verschieben"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_DragActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Square">
           <Properties>
@@ -233,9 +239,12 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Rechteck"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_SquareActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Ellipse">
           <Properties>
@@ -244,7 +253,7 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Ellipse"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
         </Component>
@@ -255,7 +264,7 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Text"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
         </Component>
@@ -266,7 +275,7 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Quadrat"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
         </Component>
@@ -286,7 +295,7 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Polygon"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
         </Component>
@@ -297,7 +306,7 @@
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Bild"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Verschiebecursor"/>
+              <Color id="Standardcursor"/>
             </Property>
           </Properties>
         </Component>

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package gui;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,9 +13,6 @@ package gui;
  */
 public class MainFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainFrame
-     */
     public MainFrame() {
         initComponents();
     }
@@ -63,6 +61,11 @@ public class MainFrame extends javax.swing.JFrame {
         setTitle("WebUI - ImageMapEditor");
         setMinimumSize(new java.awt.Dimension(500, 500));
         setPreferredSize(new java.awt.Dimension(500, 500));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPan_EditTools.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tools", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(102, 102, 102)));
         jPan_EditTools.setMinimumSize(new java.awt.Dimension(130, 10));
@@ -71,28 +74,38 @@ public class MainFrame extends javax.swing.JFrame {
 
         jBtnGroup_Tools.add(jTBtn_Circle);
         jTBtn_Circle.setToolTipText("Kreis");
-        jTBtn_Circle.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Circle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtnGroup_Tools.add(jTBtn_Drag);
         jTBtn_Drag.setSelected(true);
         jTBtn_Drag.setToolTipText("Verschieben");
-        jTBtn_Drag.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Drag.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Drag.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_DragActionPerformed(evt);
+            }
+        });
 
         jBtnGroup_Tools.add(jTBtn_Square);
         jTBtn_Square.setToolTipText("Rechteck");
-        jTBtn_Square.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Square.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Square.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_SquareActionPerformed(evt);
+            }
+        });
 
         jBtnGroup_Tools.add(jTBtn_Ellipse);
         jTBtn_Ellipse.setToolTipText("Ellipse");
-        jTBtn_Ellipse.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Ellipse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtnGroup_Tools.add(jTBtn_Text);
         jTBtn_Text.setToolTipText("Text");
-        jTBtn_Text.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Text.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtnGroup_Tools.add(jTBtn_Quadrat);
         jTBtn_Quadrat.setToolTipText("Quadrat");
-        jTBtn_Quadrat.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Quadrat.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtn_ColorChooser.setBackground(new java.awt.Color(255, 255, 255));
         jBtn_ColorChooser.setToolTipText("Klicken um eine andere Farbe zu wählen");
@@ -100,11 +113,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jBtnGroup_Tools.add(jTBtn_Polygon);
         jTBtn_Polygon.setToolTipText("Polygon");
-        jTBtn_Polygon.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Polygon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtnGroup_Tools.add(jTBtn_Img);
         jTBtn_Img.setToolTipText("Bild");
-        jTBtn_Img.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jTBtn_Img.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jList_Objects.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane_ObjectList.setViewportView(jList_Objects);
@@ -237,6 +250,20 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        createNewEmptyMap();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jTBtn_DragActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_DragActionPerformed
+        int sel = jTabPane_ImageMaps.getSelectedIndex();
+        imageMaps[sel].setTool(ImageMapPanel.ARROW_TOOL);
+    }//GEN-LAST:event_jTBtn_DragActionPerformed
+
+    private void jTBtn_SquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_SquareActionPerformed
+        int sel = jTabPane_ImageMaps.getSelectedIndex();
+        imageMaps[sel].setTool(ImageMapPanel.SQUARE_TOOL);
+    }//GEN-LAST:event_jTBtn_SquareActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -304,4 +331,18 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabPane_ImageMaps;
     private javax.swing.JToolBar jToolBar_Maintools;
     // End of variables declaration//GEN-END:variables
+
+    private ImageMapPanel[] imageMaps = new ImageMapPanel[10];
+
+    private void createNewEmptyMap() {
+        int count = jTabPane_ImageMaps.getTabCount();
+        System.out.println(count);
+        if (count == 0) {
+            jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps[0]);
+        } else if (count < imageMaps.length) {
+            jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps[count - 1]);
+        } else if (count >= imageMaps.length) {
+            JOptionPane.showInternalMessageDialog(this, "Die maximale Anzahl Tabs wurde erreicht, um eine weitere Imagemap öffnen zu können schließen Sie bitte einen Tab.", "Maximale Tabanzahl erreicht", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }

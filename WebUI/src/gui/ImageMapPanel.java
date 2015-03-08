@@ -22,9 +22,8 @@ public class ImageMapPanel extends JPanel implements ActionListener,
     public final static int SQUARE_TOOL = 1;
     public final static int CIRCLE_TOOL = 2;
     public final static int TRIANGLE_TOOL = 3;
-    public final static int DRAG_TOOL = 4;
-    public final static int PENTAGON_TOOL = 5;
-    public final static int HEXAGON_TOOL = 6;
+    public final static int PENTAGON_TOOL = 4;
+    public final static int HEXAGON_TOOL = 5;
     private int tool = ARROW_TOOL;
     private Color col = Color.WHITE;
 
@@ -69,11 +68,6 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         moveBack.addActionListener(this);
         delete.addActionListener(this);
         info.addActionListener(this);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -231,6 +225,44 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         }
         repaint();
 
+    }
+
+    public void setTool(int t) {
+        tool = t;
+        if (t > ARROW_TOOL) {
+            setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+        } else {
+            setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        }
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object src = e.getSource();
+
+        if (src == moveTop) {
+            vec.remove(currentShape);
+            vec.add(currentShape);
+            repaint();
+        }
+
+        if (src == moveBack) {
+            vec.remove(currentShape);
+            vec.add(0, currentShape);
+            repaint();
+        }
+
+        if (src == info) {
+           // currentShape.showInfoWin(win);
+        }
+
+        if (src == delete) {
+            vec.remove(currentShape);
+            currentShape = null;
+            currentRect = null;
+            repaint();
+        }
     }
 
     //getters & setters
