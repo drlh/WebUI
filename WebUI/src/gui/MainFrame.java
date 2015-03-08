@@ -336,7 +336,6 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void createNewEmptyMap() {
         int count = jTabPane_ImageMaps.getTabCount();
-        System.out.println(count);
         if (count == 0) {
             jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps[0]);
         } else if (count < imageMaps.length) {

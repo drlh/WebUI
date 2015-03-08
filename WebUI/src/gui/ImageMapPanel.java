@@ -68,6 +68,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         moveBack.addActionListener(this);
         delete.addActionListener(this);
         info.addActionListener(this);
+        this.setBackground(Color.GRAY);
     }
 
     @Override
