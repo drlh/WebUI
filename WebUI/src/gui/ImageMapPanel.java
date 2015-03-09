@@ -136,19 +136,19 @@ public class ImageMapPanel extends JPanel implements ActionListener,
 
         switch (tool) {
             case SQUARE_TOOL:
-                s = new RectangleObject(col, r.x, r.y, r.width, r.height);
+                s = new RectangleObject(getColor(), r.x, r.y, r.width, r.height);
                 break;
             case CIRCLE_TOOL:
-                s = new CircleObject(col, r.x, r.y, r.width, r.height);
+                s = new CircleObject(getColor(), r.x, r.y, r.width, r.height);
                 break;
             case TRIANGLE_TOOL:
-                s = new TriangleObject(col, r.x, r.y, r.width, r.height);
+                s = new TriangleObject(getColor(), r.x, r.y, r.width, r.height);
                 break;
             case PENTAGON_TOOL:
-                s = new PentagonObject(col, r.x, r.y, r.width, r.height);
+                s = new PentagonObject(getColor(), r.x, r.y, r.width, r.height);
                 break;
             case HEXAGON_TOOL:
-                s = new HexagonObject(col, r.x, r.y, r.width, r.height);
+                s = new HexagonObject(getColor(), r.x, r.y, r.width, r.height);
                 break;
         }
 

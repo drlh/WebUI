@@ -5,6 +5,7 @@
  */
 package gui;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -109,8 +110,14 @@ public class MainFrame extends javax.swing.JFrame {
         jTBtn_Quadrat.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtn_ColorChooser.setBackground(new java.awt.Color(255, 255, 255));
+        jBtn_ColorChooser.setText("Farbe");
         jBtn_ColorChooser.setToolTipText("Klicken um eine andere Farbe zu wählen");
         jBtn_ColorChooser.setRolloverEnabled(false);
+        jBtn_ColorChooser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtn_ColorChooserActionPerformed(evt);
+            }
+        });
 
         jBtnGroup_Tools.add(jTBtn_Polygon);
         jTBtn_Polygon.setToolTipText("Polygon");
@@ -128,24 +135,17 @@ public class MainFrame extends javax.swing.JFrame {
         jPan_EditToolsLayout.setHorizontalGroup(
             jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPan_EditToolsLayout.createSequentialGroup()
-                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPan_EditToolsLayout.createSequentialGroup()
-                        .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2))
-                    .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPan_EditToolsLayout.createSequentialGroup()
-                            .addGap(4, 4, 4)
-                            .addComponent(jTBtn_Drag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jTBtn_Square, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTBtn_Quadrat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
                         .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPan_EditToolsLayout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTBtn_Drag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(jTBtn_Square, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTBtn_Quadrat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPan_EditToolsLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
                                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTBtn_Img, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,8 +155,11 @@ public class MainFrame extends javax.swing.JFrame {
                                     .addGroup(jPan_EditToolsLayout.createSequentialGroup()
                                         .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTBtn_Polygon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap())
+                                        .addComponent(jTBtn_Polygon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4))
         );
         jPan_EditToolsLayout.setVerticalGroup(
             jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,9 +182,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jTBtn_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPan_EditTools, java.awt.BorderLayout.LINE_START);
@@ -274,6 +276,14 @@ public class MainFrame extends javax.swing.JFrame {
         createNewEmptyMap();
     }//GEN-LAST:event_jBtn_NewActionPerformed
 
+    private void jBtn_ColorChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ColorChooserActionPerformed
+        jCC_ChooseObjectColor.show();
+        int sel = jTabPane_ImageMaps.getSelectedIndex();
+        Color c = jCC_ChooseObjectColor.showDialog(this, "Farbauswahl", imageMaps.get(sel).getColor());
+        imageMaps.get(sel).setColor(c);
+        jBtn_ColorChooser.setBackground(c);
+    }//GEN-LAST:event_jBtn_ColorChooserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -351,7 +361,7 @@ public class MainFrame extends javax.swing.JFrame {
             jTabPane_ImageMaps.add("Neue Image Map 1", imageMaps.get(0));
         } else {
             imageMaps.add(new ImageMapPanel(this));
-            jTabPane_ImageMaps.addTab("Neue Image Map " + (count+1), imageMaps.get(count));
+            jTabPane_ImageMaps.addTab("Neue Image Map " + (count + 1), imageMaps.get(count));
         }
     }
 }
