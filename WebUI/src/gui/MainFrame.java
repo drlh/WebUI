@@ -192,6 +192,11 @@ public class MainFrame extends javax.swing.JFrame {
         jBtn_New.setFocusable(false);
         jBtn_New.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jBtn_New.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBtn_New.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtn_NewActionPerformed(evt);
+            }
+        });
         jToolBar_Maintools.add(jBtn_New);
 
         jBtn_Open.setText("Öffnen...");
@@ -263,6 +268,10 @@ public class MainFrame extends javax.swing.JFrame {
         int sel = jTabPane_ImageMaps.getSelectedIndex();
         imageMaps[sel].setTool(ImageMapPanel.SQUARE_TOOL);
     }//GEN-LAST:event_jTBtn_SquareActionPerformed
+
+    private void jBtn_NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_NewActionPerformed
+       createNewEmptyMap();
+    }//GEN-LAST:event_jBtn_NewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,7 +346,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void createNewEmptyMap() {
         int count = jTabPane_ImageMaps.getTabCount();
         if (count == 0) {
-            jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps[0]);
+            jTabPane_ImageMaps.add("Neue Image Map", imageMaps[0]);
         } else if (count < imageMaps.length) {
             jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps[count - 1]);
         } else if (count >= imageMaps.length) {
