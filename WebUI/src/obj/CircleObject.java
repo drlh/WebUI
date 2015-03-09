@@ -51,12 +51,12 @@ public class CircleObject extends GraphicalObject {
 
     @Override
     public boolean contains(Point p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     @Override
     public String getObjectInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Kreis";
     }
 
 }
