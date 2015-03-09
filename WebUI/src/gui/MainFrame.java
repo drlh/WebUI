@@ -348,10 +348,10 @@ public class MainFrame extends javax.swing.JFrame {
         int count = jTabPane_ImageMaps.getTabCount();
         if (count <= 0) {
             imageMaps.add(new ImageMapPanel(this));
-            jTabPane_ImageMaps.add("Neue Image Map", imageMaps.get(0));
+            jTabPane_ImageMaps.add("Neue Image Map 1", imageMaps.get(0));
         } else {
             imageMaps.add(new ImageMapPanel(this));
-            jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps.get(count));
+            jTabPane_ImageMaps.addTab("Neue Image Map " + (count+1), imageMaps.get(count));
         }
     }
 }
