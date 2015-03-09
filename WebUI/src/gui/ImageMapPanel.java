@@ -18,6 +18,9 @@ import obj.*;
 public class ImageMapPanel extends JPanel implements ActionListener,
         MouseListener, MouseMotionListener {
 
+    private String mapTitel = "";
+    private String mapSource = "";
+
     public final static int ARROW_TOOL = 0;
     public final static int SQUARE_TOOL = 1;
     public final static int CIRCLE_TOOL = 2;
@@ -266,6 +269,16 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         }
     }
 
+    public String generateMap() {
+        String mc = "<img usemap=\"" + getMapTitel() + "\" src=\"" + getMapSource() + "\" >";
+        mc += "<map name=\"" + getMapTitel() + "\">";
+        for (int i = 0; this.vec.size() < i; i++) {
+            mc += this.vec.get(i).getMapCode();
+        }
+        mc = "</map>";
+        return mc;
+    }
+
     //getters & setters
     public Color getColor() {
         return col;
@@ -273,6 +286,22 @@ public class ImageMapPanel extends JPanel implements ActionListener,
 
     public void setColor(Color col) {
         this.col = col;
+    }
+
+    public String getMapTitel() {
+        return mapTitel;
+    }
+
+    public void setMapTitel(String maptitel) {
+        this.mapTitel = maptitel;
+    }
+
+    public String getMapSource() {
+        return mapSource;
+    }
+
+    public void setMapSource(String mapsource) {
+        this.mapTitel = mapsource;
     }
 
 }
