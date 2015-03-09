@@ -5,6 +5,7 @@
  */
 package gui;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -261,16 +262,16 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jTBtn_DragActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_DragActionPerformed
         int sel = jTabPane_ImageMaps.getSelectedIndex();
-        imageMaps[sel].setTool(ImageMapPanel.ARROW_TOOL);
+        imageMaps.get(sel).setTool(ImageMapPanel.ARROW_TOOL);
     }//GEN-LAST:event_jTBtn_DragActionPerformed
 
     private void jTBtn_SquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_SquareActionPerformed
         int sel = jTabPane_ImageMaps.getSelectedIndex();
-        imageMaps[sel].setTool(ImageMapPanel.SQUARE_TOOL);
+        imageMaps.get(sel).setTool(ImageMapPanel.SQUARE_TOOL);
     }//GEN-LAST:event_jTBtn_SquareActionPerformed
 
     private void jBtn_NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_NewActionPerformed
-       createNewEmptyMap();
+        createNewEmptyMap();
     }//GEN-LAST:event_jBtn_NewActionPerformed
 
     /**
@@ -341,16 +342,16 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar_Maintools;
     // End of variables declaration//GEN-END:variables
 
-    private ImageMapPanel[] imageMaps = new ImageMapPanel[10];
+    private ArrayList<ImageMapPanel> imageMaps = new ArrayList<ImageMapPanel>();
 
     private void createNewEmptyMap() {
         int count = jTabPane_ImageMaps.getTabCount();
-        if (count == 0) {
-            jTabPane_ImageMaps.add("Neue Image Map", imageMaps[0]);
-        } else if (count < imageMaps.length) {
-            jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps[count - 1]);
-        } else if (count >= imageMaps.length) {
-            JOptionPane.showInternalMessageDialog(this, "Die maximale Anzahl Tabs wurde erreicht, um eine weitere Imagemap öffnen zu können schließen Sie bitte einen Tab.", "Maximale Tabanzahl erreicht", JOptionPane.ERROR_MESSAGE);
+        if (count <= 0) {
+            imageMaps.add(new ImageMapPanel(this));
+            jTabPane_ImageMaps.add("Neue Image Map", imageMaps.get(0));
+        } else {
+            imageMaps.add(new ImageMapPanel(this));
+            jTabPane_ImageMaps.addTab("Neue Image Map", imageMaps.get(count));
         }
     }
 }

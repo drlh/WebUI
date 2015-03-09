@@ -68,27 +68,27 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         moveBack.addActionListener(this);
         delete.addActionListener(this);
         info.addActionListener(this);
-        this.setBackground(Color.GRAY);
+        this.setBackground(Color.WHITE);
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
@@ -255,7 +255,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         }
 
         if (src == info) {
-           // currentShape.showInfoWin(win);
+            // currentShape.showInfoWin(win);
         }
 
         if (src == delete) {
