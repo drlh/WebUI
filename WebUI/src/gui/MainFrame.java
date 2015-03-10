@@ -8,15 +8,19 @@ package gui;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  *
  * @author PR050736
  */
-public class MainFrame extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame implements ChangeListener {
 
     public MainFrame() {
         initComponents();
+        jTabPane_ImageMaps.addChangeListener(this);
     }
 
     /**
@@ -36,9 +40,9 @@ public class MainFrame extends javax.swing.JFrame {
         jTBtn_Square = new javax.swing.JToggleButton();
         jTBtn_Ellipse = new javax.swing.JToggleButton();
         jTBtn_Text = new javax.swing.JToggleButton();
-        jTBtn_Quadrat = new javax.swing.JToggleButton();
+        jTBtn_Rectangle = new javax.swing.JToggleButton();
         jBtn_ColorChooser = new javax.swing.JButton();
-        jTBtn_Polygon = new javax.swing.JToggleButton();
+        jTBtn_Triangle = new javax.swing.JToggleButton();
         jTBtn_Img = new javax.swing.JToggleButton();
         jScrollPane_ObjectList = new javax.swing.JScrollPane();
         jList_Objects = new javax.swing.JList();
@@ -62,7 +66,6 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WebUI - ImageMapEditor");
         setMinimumSize(new java.awt.Dimension(500, 500));
-        setPreferredSize(new java.awt.Dimension(500, 500));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -89,7 +92,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jBtnGroup_Tools.add(jTBtn_Square);
-        jTBtn_Square.setToolTipText("Rechteck");
+        jTBtn_Square.setToolTipText("Quadrat");
         jTBtn_Square.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTBtn_Square.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,9 +108,9 @@ public class MainFrame extends javax.swing.JFrame {
         jTBtn_Text.setToolTipText("Text");
         jTBtn_Text.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jBtnGroup_Tools.add(jTBtn_Quadrat);
-        jTBtn_Quadrat.setToolTipText("Quadrat");
-        jTBtn_Quadrat.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jBtnGroup_Tools.add(jTBtn_Rectangle);
+        jTBtn_Rectangle.setToolTipText("Rechteck");
+        jTBtn_Rectangle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtn_ColorChooser.setBackground(new java.awt.Color(255, 255, 255));
         jBtn_ColorChooser.setText("Farbe");
@@ -119,9 +122,9 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jBtnGroup_Tools.add(jTBtn_Polygon);
-        jTBtn_Polygon.setToolTipText("Polygon");
-        jTBtn_Polygon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jBtnGroup_Tools.add(jTBtn_Triangle);
+        jTBtn_Triangle.setToolTipText("Polygon");
+        jTBtn_Triangle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jBtnGroup_Tools.add(jTBtn_Img);
         jTBtn_Img.setToolTipText("Bild");
@@ -144,7 +147,7 @@ public class MainFrame extends javax.swing.JFrame {
                                 .addGap(10, 10, 10)
                                 .addComponent(jTBtn_Square, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTBtn_Quadrat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTBtn_Rectangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPan_EditToolsLayout.createSequentialGroup()
                                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTBtn_Img, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,7 +158,7 @@ public class MainFrame extends javax.swing.JFrame {
                                     .addGroup(jPan_EditToolsLayout.createSequentialGroup()
                                         .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTBtn_Polygon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jTBtn_Triangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -170,12 +173,12 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTBtn_Drag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTBtn_Square, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTBtn_Quadrat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTBtn_Rectangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
                         .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jTBtn_Polygon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTBtn_Triangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTBtn_Img, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -263,13 +266,13 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jTBtn_DragActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_DragActionPerformed
-        int sel = jTabPane_ImageMaps.getSelectedIndex();
-        imageMaps.get(sel).setTool(ImageMapPanel.ARROW_TOOL);
+
+        updateTools(jTabPane_ImageMaps);
     }//GEN-LAST:event_jTBtn_DragActionPerformed
 
     private void jTBtn_SquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_SquareActionPerformed
-        int sel = jTabPane_ImageMaps.getSelectedIndex();
-        imageMaps.get(sel).setTool(ImageMapPanel.SQUARE_TOOL);
+
+        updateTools(jTabPane_ImageMaps);
     }//GEN-LAST:event_jTBtn_SquareActionPerformed
 
     private void jBtn_NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_NewActionPerformed
@@ -277,11 +280,10 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtn_NewActionPerformed
 
     private void jBtn_ColorChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ColorChooserActionPerformed
-        jCC_ChooseObjectColor.show();
         int sel = jTabPane_ImageMaps.getSelectedIndex();
         Color c = jCC_ChooseObjectColor.showDialog(this, "Farbauswahl", imageMaps.get(sel).getColor());
-        imageMaps.get(sel).setColor(c);
         jBtn_ColorChooser.setBackground(c);
+        updateTools(jTabPane_ImageMaps);
     }//GEN-LAST:event_jBtn_ColorChooserActionPerformed
 
     /**
@@ -317,6 +319,7 @@ public class MainFrame extends javax.swing.JFrame {
                 new MainFrame().setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -344,10 +347,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JToggleButton jTBtn_Drag;
     private javax.swing.JToggleButton jTBtn_Ellipse;
     private javax.swing.JToggleButton jTBtn_Img;
-    private javax.swing.JToggleButton jTBtn_Polygon;
-    private javax.swing.JToggleButton jTBtn_Quadrat;
+    private javax.swing.JToggleButton jTBtn_Rectangle;
     private javax.swing.JToggleButton jTBtn_Square;
     private javax.swing.JToggleButton jTBtn_Text;
+    private javax.swing.JToggleButton jTBtn_Triangle;
     private javax.swing.JTabbedPane jTabPane_ImageMaps;
     private javax.swing.JToolBar jToolBar_Maintools;
     // End of variables declaration//GEN-END:variables
@@ -364,4 +367,35 @@ public class MainFrame extends javax.swing.JFrame {
             jTabPane_ImageMaps.addTab("Neue Image Map " + (count + 1), imageMaps.get(count));
         }
     }
+
+    private void updateTools(JTabbedPane tabpane) {
+        int i = tabpane.getSelectedIndex();
+        Color col = jBtn_ColorChooser.getBackground();
+        imageMaps.get(i).setColor(col);
+
+        if (jTBtn_Circle.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.CIRCLE_TOOL);
+        }
+        if (jTBtn_Drag.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.ARROW_TOOL);
+        }
+        if (jTBtn_Ellipse.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.ELLIPSE_TOOL);
+        }
+        if (jTBtn_Triangle.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.TRIANGLE_TOOL);
+        }
+        if (jTBtn_Square.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.SQUARE_TOOL);
+        }
+        if (jTBtn_Rectangle.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.RECTANGLE_TOOL);
+        }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent e) {
+        updateTools(jTabPane_ImageMaps);
+    }
+
 }

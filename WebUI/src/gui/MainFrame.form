@@ -76,9 +76,6 @@
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[500, 500]"/>
     </Property>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[500, 500]"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar_mainMenu"/>
@@ -139,7 +136,7 @@
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Component id="jTBtn_Square" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jTBtn_Quadrat" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jTBtn_Rectangle" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -152,7 +149,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jTBtn_Ellipse" min="-2" pref="30" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jTBtn_Polygon" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="jTBtn_Triangle" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -175,7 +172,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jTBtn_Drag" min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jTBtn_Square" min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jTBtn_Quadrat" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jTBtn_Rectangle" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -183,7 +180,7 @@
                               <Component id="jTBtn_Ellipse" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jTBtn_Polygon" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jTBtn_Triangle" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -230,7 +227,7 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="jBtnGroup_Tools"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Rechteck"/>
+            <Property name="toolTipText" type="java.lang.String" value="Quadrat"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Standardcursor"/>
             </Property>
@@ -261,12 +258,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jTBtn_Quadrat">
+        <Component class="javax.swing.JToggleButton" name="jTBtn_Rectangle">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="jBtnGroup_Tools"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Quadrat"/>
+            <Property name="toolTipText" type="java.lang.String" value="Rechteck"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Standardcursor"/>
             </Property>
@@ -285,7 +282,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtn_ColorChooserActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jTBtn_Polygon">
+        <Component class="javax.swing.JToggleButton" name="jTBtn_Triangle">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="jBtnGroup_Tools"/>

@@ -27,6 +27,8 @@ public class ImageMapPanel extends JPanel implements ActionListener,
     public final static int TRIANGLE_TOOL = 3;
     public final static int PENTAGON_TOOL = 4;
     public final static int HEXAGON_TOOL = 5;
+    public final static int RECTANGLE_TOOL = 6;
+    public final static int ELLIPSE_TOOL = 7;
     private int tool = ARROW_TOOL;
     private Color col = Color.WHITE;
 
