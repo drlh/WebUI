@@ -6,10 +6,48 @@
 
 package obj;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Point;
+
 /**
  *
  * @author PR050736
  */
-public class SquareObject {
+public class SquareObject extends GraphicalObject{
+
+    public SquareObject(Color col, int x, int y, int width, int height) {
+        super(col, x, y, width, height);
+    }
+
+    @Override
+    public String getObjectInfo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getCoordinates() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setCoordinates(String coordinate) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void draw(Graphics2D g) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getMapCode() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean contains(Point p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

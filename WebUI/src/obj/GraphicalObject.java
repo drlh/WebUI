@@ -71,4 +71,5 @@ public abstract class GraphicalObject implements Serializable {
     public void setR(Rectangle r) {
         this.r = r;
     }
+
 }
