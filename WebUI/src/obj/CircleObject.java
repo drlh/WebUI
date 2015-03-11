@@ -1,8 +1,7 @@
 package obj;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Point;
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
 
 /**
  *
@@ -10,12 +9,16 @@ import java.awt.Point;
  */
 public class CircleObject extends GraphicalObject {
 
-    private int rad, x;
+    private int rad, x, y;
     private int[] coords = new int[3];
 
-    public CircleObject(Color col, int x, int y, int width, int height) {
-        super(col, x, y, width, height);
+    public CircleObject(Color col, int x, int y, int rad) {
         this.col = col;
+        r = new Rectangle(x, y, rad, rad);
+        this.rad = rad;
+        this.x = x;
+        this.y = y;
+        setCoordinates(x + "," + y + "," + rad);
     }
 
     @Override
@@ -37,21 +40,25 @@ public class CircleObject extends GraphicalObject {
     public void setCoordinates(String coordinates) {
         String[] split = coordinates.split(",");
         x = Integer.parseInt(split[0]);
+        y = Integer.parseInt(split[1]);
         rad = Integer.parseInt(split[2]);
         coords[0] = x;
-        coords[1] = x;
+        coords[1] = y;
         coords[2] = rad;
 
     }
 
     @Override
     public void draw(Graphics2D g) {
-        g.drawOval(x, x, rad, rad);
+        g.setColor(getColor());
+        g.fillOval(r.x, r.y, r.width, r.height);
+
     }
 
     @Override
-    public boolean contains(Point p) {
-        return false;
+    public boolean contains(Point startPoint) {
+        Ellipse2D e = new Ellipse2D.Double(r.x, r.y, r.width, r.height);
+        return e.contains(startPoint);
     }
 
     @Override

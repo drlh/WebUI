@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package obj;
 
 import java.awt.Color;
@@ -14,10 +13,10 @@ import java.awt.Point;
  *
  * @author PR050736
  */
-public class EllipseObject extends GraphicalObject{
+public class EllipseObject extends GraphicalObject {
 
     public EllipseObject(Color col, int x, int y, int width, int height) {
-        super(col, x, y, width, height);
+
     }
 
     @Override
@@ -49,5 +48,5 @@ public class EllipseObject extends GraphicalObject{
     public boolean contains(Point p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

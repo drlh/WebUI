@@ -23,10 +23,10 @@ public abstract class GraphicalObject implements Serializable {
     private String alt = "";
     private int[] coords;
 
-    public GraphicalObject(Color col, int x, int y, int width, int height) {
-        this.col = col;
-        r = new Rectangle(x, y, width, height);
-    }
+//    public GraphicalObject(Color col, int x, int y, int width, int height) {
+//        this.col = col;
+//        r = new Rectangle(x, y, width, height);
+//    }
 
     public abstract String getObjectInfo();
 

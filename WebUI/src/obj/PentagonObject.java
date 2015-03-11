@@ -16,7 +16,7 @@ import java.awt.Point;
 public class PentagonObject extends GraphicalObject {
 
     public PentagonObject(Color col, int x, int y, int width, int height) {
-        super(col, x, y, width, height);
+
         this.col = col;
     }
 

@@ -17,7 +17,7 @@ import java.awt.Point;
 public class SquareObject extends GraphicalObject{
 
     public SquareObject(Color col, int x, int y, int width, int height) {
-        super(col, x, y, width, height);
+   
     }
 
     @Override

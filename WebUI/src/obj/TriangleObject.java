@@ -16,7 +16,7 @@ import java.awt.Point;
 public class TriangleObject extends GraphicalObject {
 
     public TriangleObject(Color col, int x, int y, int width, int height) {
-        super(col, x, y, width, height);
+   
     }
 
     @Override

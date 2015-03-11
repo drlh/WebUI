@@ -17,7 +17,7 @@ import java.awt.Point;
 public class RectangleObject extends GraphicalObject{
 
     public RectangleObject(Color col, int x, int y, int width, int height) {
-        super(col, x, y, width, height);
+    
     }
 
     @Override

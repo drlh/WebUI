@@ -16,7 +16,7 @@ import java.awt.Point;
 public class HexagonObject extends GraphicalObject {
 
     public HexagonObject(Color col, int x, int y, int width, int height) {
-        super(col, x, y, width, height);
+   
     }
 
     @Override
