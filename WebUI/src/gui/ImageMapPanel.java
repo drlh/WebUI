@@ -107,7 +107,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
                     GraphicalObject s = vec.get(i);
                     Rectangle r = s.getR();
                     if (s.contains(startPoint)) {
-                        System.out.println(r);
+                       // System.out.println(s.getMapCode());
                         currentShape = s;
                         currentRect = r;
                         break;

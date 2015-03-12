@@ -17,6 +17,7 @@ public class TriangleObject extends GraphicalObject {
     public TriangleObject(Color col, int x, int y, int width, int height) {
         this.col = col;
         r = new Rectangle(x, y, width, height);
+        getTriangle();
     }
 
     @Override
