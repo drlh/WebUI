@@ -31,7 +31,11 @@ public class CircleObject extends GraphicalObject {
     public String getCoordinates() {
         String c = "";
         for (int i = 0; i < coords.length; i++) {
-            c += coords[i] + ",";
+            if ((i + 1) == coords.length) {
+                c += coords[i];
+            } else {
+                c += coords[i] + ",";
+            }
         }
         return c;
     }
@@ -45,7 +49,6 @@ public class CircleObject extends GraphicalObject {
         coords[0] = x;
         coords[1] = y;
         coords[2] = rad;
-
     }
 
     @Override
@@ -63,7 +66,7 @@ public class CircleObject extends GraphicalObject {
 
     @Override
     public String getObjectInfo() {
-        return "Kreis";
+        return "Kreis: Rad[" + rad + "] Centerpos[" + x + "," + y + "]";
     }
 
 }

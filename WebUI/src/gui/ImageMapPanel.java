@@ -142,6 +142,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
                 break;
             case CIRCLE_TOOL:
                 s = new CircleObject(getColor(), r.x, r.y, (r.width + r.height) / 2);
+                System.out.println(s.getMapCode());
                 break;
             case TRIANGLE_TOOL:
                 s = new TriangleObject(getColor(), r.x, r.y, r.width, r.height);
