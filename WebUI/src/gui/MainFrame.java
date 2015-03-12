@@ -39,11 +39,11 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         jTBtn_Drag = new javax.swing.JToggleButton();
         jTBtn_Square = new javax.swing.JToggleButton();
         jTBtn_Ellipse = new javax.swing.JToggleButton();
-        jTBtn_Text = new javax.swing.JToggleButton();
+        jTBtn_Hexagon = new javax.swing.JToggleButton();
         jTBtn_Rectangle = new javax.swing.JToggleButton();
         jBtn_ColorChooser = new javax.swing.JButton();
         jTBtn_Triangle = new javax.swing.JToggleButton();
-        jTBtn_Img = new javax.swing.JToggleButton();
+        jTBtn_Pentagon = new javax.swing.JToggleButton();
         jScrollPane_ObjectList = new javax.swing.JScrollPane();
         jList_Objects = new javax.swing.JList();
         jTabPane_ImageMaps = new javax.swing.JTabbedPane();
@@ -80,6 +80,11 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         jBtnGroup_Tools.add(jTBtn_Circle);
         jTBtn_Circle.setToolTipText("Kreis");
         jTBtn_Circle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Circle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_CircleActionPerformed(evt);
+            }
+        });
 
         jBtnGroup_Tools.add(jTBtn_Drag);
         jTBtn_Drag.setSelected(true);
@@ -103,14 +108,29 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         jBtnGroup_Tools.add(jTBtn_Ellipse);
         jTBtn_Ellipse.setToolTipText("Ellipse");
         jTBtn_Ellipse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Ellipse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_EllipseActionPerformed(evt);
+            }
+        });
 
-        jBtnGroup_Tools.add(jTBtn_Text);
-        jTBtn_Text.setToolTipText("Text");
-        jTBtn_Text.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jBtnGroup_Tools.add(jTBtn_Hexagon);
+        jTBtn_Hexagon.setToolTipText("Sechseck");
+        jTBtn_Hexagon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Hexagon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_HexagonActionPerformed(evt);
+            }
+        });
 
         jBtnGroup_Tools.add(jTBtn_Rectangle);
         jTBtn_Rectangle.setToolTipText("Rechteck");
         jTBtn_Rectangle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Rectangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_RectangleActionPerformed(evt);
+            }
+        });
 
         jBtn_ColorChooser.setBackground(new java.awt.Color(255, 255, 255));
         jBtn_ColorChooser.setText("Farbe");
@@ -123,12 +143,22 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         });
 
         jBtnGroup_Tools.add(jTBtn_Triangle);
-        jTBtn_Triangle.setToolTipText("Polygon");
+        jTBtn_Triangle.setToolTipText("Dreieck");
         jTBtn_Triangle.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Triangle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_TriangleActionPerformed(evt);
+            }
+        });
 
-        jBtnGroup_Tools.add(jTBtn_Img);
-        jTBtn_Img.setToolTipText("Bild");
-        jTBtn_Img.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jBtnGroup_Tools.add(jTBtn_Pentagon);
+        jTBtn_Pentagon.setToolTipText("Fünfeck");
+        jTBtn_Pentagon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTBtn_Pentagon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTBtn_PentagonActionPerformed(evt);
+            }
+        });
 
         jList_Objects.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane_ObjectList.setViewportView(jList_Objects);
@@ -150,11 +180,11 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
                                 .addComponent(jTBtn_Rectangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPan_EditToolsLayout.createSequentialGroup()
                                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTBtn_Img, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTBtn_Pentagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(10, 10, 10)
                                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTBtn_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTBtn_Hexagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPan_EditToolsLayout.createSequentialGroup()
                                         .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -181,8 +211,8 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
                     .addComponent(jTBtn_Triangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTBtn_Img, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTBtn_Text, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTBtn_Pentagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTBtn_Hexagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -285,6 +315,30 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         jBtn_ColorChooser.setBackground(c);
         updateTools(jTabPane_ImageMaps);
     }//GEN-LAST:event_jBtn_ColorChooserActionPerformed
+//ToolButtons
+    private void jTBtn_RectangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_RectangleActionPerformed
+        updateTools(jTabPane_ImageMaps);
+    }//GEN-LAST:event_jTBtn_RectangleActionPerformed
+
+    private void jTBtn_CircleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_CircleActionPerformed
+        updateTools(jTabPane_ImageMaps);
+    }//GEN-LAST:event_jTBtn_CircleActionPerformed
+
+    private void jTBtn_EllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_EllipseActionPerformed
+        updateTools(jTabPane_ImageMaps);
+    }//GEN-LAST:event_jTBtn_EllipseActionPerformed
+
+    private void jTBtn_TriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_TriangleActionPerformed
+        updateTools(jTabPane_ImageMaps);
+    }//GEN-LAST:event_jTBtn_TriangleActionPerformed
+
+    private void jTBtn_PentagonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_PentagonActionPerformed
+        updateTools(jTabPane_ImageMaps);
+    }//GEN-LAST:event_jTBtn_PentagonActionPerformed
+
+    private void jTBtn_HexagonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_HexagonActionPerformed
+        updateTools(jTabPane_ImageMaps);
+    }//GEN-LAST:event_jTBtn_HexagonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,10 +400,10 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
     private javax.swing.JToggleButton jTBtn_Circle;
     private javax.swing.JToggleButton jTBtn_Drag;
     private javax.swing.JToggleButton jTBtn_Ellipse;
-    private javax.swing.JToggleButton jTBtn_Img;
+    private javax.swing.JToggleButton jTBtn_Hexagon;
+    private javax.swing.JToggleButton jTBtn_Pentagon;
     private javax.swing.JToggleButton jTBtn_Rectangle;
     private javax.swing.JToggleButton jTBtn_Square;
-    private javax.swing.JToggleButton jTBtn_Text;
     private javax.swing.JToggleButton jTBtn_Triangle;
     private javax.swing.JTabbedPane jTabPane_ImageMaps;
     private javax.swing.JToolBar jToolBar_Maintools;
@@ -391,6 +445,13 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         if (jTBtn_Rectangle.isSelected()) {
             imageMaps.get(i).setTool(ImageMapPanel.RECTANGLE_TOOL);
         }
+        if (jTBtn_Hexagon.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.HEXAGON_TOOL);
+        }
+        if (jTBtn_Pentagon.isSelected()) {
+            imageMaps.get(i).setTool(ImageMapPanel.PENTAGON_TOOL);
+        }
+
     }
 
     @Override

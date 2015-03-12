@@ -139,6 +139,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
         switch (tool) {
             case SQUARE_TOOL:
                 s = new RectangleObject(getColor(), r.x, r.y, r.width, r.height);
+                System.out.println(s.getMapCode());
                 break;
             case CIRCLE_TOOL:
                 s = new CircleObject(getColor(), r.x, r.y, (r.width + r.height) / 2);
@@ -146,12 +147,15 @@ public class ImageMapPanel extends JPanel implements ActionListener,
                 break;
             case TRIANGLE_TOOL:
                 s = new TriangleObject(getColor(), r.x, r.y, r.width, r.height);
+                System.out.println(s.getMapCode());
                 break;
             case PENTAGON_TOOL:
                 s = new PentagonObject(getColor(), r.x, r.y, r.width, r.height);
+                System.out.println(s.getMapCode());
                 break;
             case HEXAGON_TOOL:
                 s = new HexagonObject(getColor(), r.x, r.y, r.width, r.height);
+                System.out.println(s.getMapCode());
                 break;
         }
 

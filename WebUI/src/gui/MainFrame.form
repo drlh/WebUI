@@ -140,12 +140,12 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTBtn_Img" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="jTBtn_Pentagon" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Component id="jTBtn_Circle" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTBtn_Text" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="jTBtn_Hexagon" min="-2" pref="30" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="jTBtn_Ellipse" min="-2" pref="30" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -184,8 +184,8 @@
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTBtn_Img" min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jTBtn_Text" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jTBtn_Pentagon" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jTBtn_Hexagon" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="jBtn_ColorChooser" min="-2" pref="30" max="-2" attributes="0"/>
@@ -206,6 +206,9 @@
               <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_CircleActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Drag">
           <Properties>
@@ -246,17 +249,23 @@
               <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_EllipseActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jTBtn_Text">
+        <Component class="javax.swing.JToggleButton" name="jTBtn_Hexagon">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="jBtnGroup_Tools"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Text"/>
+            <Property name="toolTipText" type="java.lang.String" value="Sechseck"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_HexagonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jTBtn_Rectangle">
           <Properties>
@@ -268,6 +277,9 @@
               <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_RectangleActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBtn_ColorChooser">
           <Properties>
@@ -287,22 +299,28 @@
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="jBtnGroup_Tools"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Polygon"/>
+            <Property name="toolTipText" type="java.lang.String" value="Dreieck"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_TriangleActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jTBtn_Img">
+        <Component class="javax.swing.JToggleButton" name="jTBtn_Pentagon">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="jBtnGroup_Tools"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Bild"/>
+            <Property name="toolTipText" type="java.lang.String" value="F&#xfc;nfeck"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Standardcursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTBtn_PentagonActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane_ObjectList">
           <AuxValues>
