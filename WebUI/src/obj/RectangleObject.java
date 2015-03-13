@@ -3,51 +3,70 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package obj;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.geom.Rectangle2D;
+import javax.swing.Spring;
 
 /**
  *
  * @author PR050736
  */
-public class RectangleObject extends GraphicalObject{
+public class RectangleObject extends GraphicalObject {
+
+    int[] coords = new int[4];
 
     public RectangleObject(Color col, int x, int y, int width, int height) {
-    
+        this.col = col;
+        r = new Rectangle(x, y, width, height);
     }
 
     @Override
     public String getCoordinates() {
-        return "";
+        String c = "";
+        for (int i = 0; i < coords.length; i++) {
+            if ((i + 1) == coords.length) {
+                c += coords[i];
+            } else {
+                c += coords[i] + ",";
+            }
+        }
+        return c;
     }
 
     @Override
     public void setCoordinates(String coordinate) {
-        
+
     }
 
     @Override
     public void draw(Graphics2D g) {
-        
+        g.setColor(col);
+        g.fillRect(r.x, r.y, r.width, r.height);
+        coords[0] = r.x;
+        coords[1] = r.y;
+        coords[2] = r.x + r.width;
+        coords[3] = r.y + r.height;
     }
 
     @Override
     public String getMapCode() {
-        return "";
+        return "<area alt=\"" + getAlt() + "\" href=\"" + getHref() + " coords=\"" + getCoordinates() + "\" shape=\"rect\">";
     }
 
     @Override
     public boolean contains(Point p) {
-        return false;
+        Rectangle2D e = new Rectangle2D.Double(r.x, r.y, r.width, r.height);
+        return e.contains(p);
     }
 
     @Override
     public String getObjectInfo() {
         return "Rechteck";
     }
-    
+
 }
