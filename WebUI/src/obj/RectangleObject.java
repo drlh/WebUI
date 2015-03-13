@@ -10,7 +10,6 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.geom.Rectangle2D;
-import javax.swing.Spring;
 
 /**
  *
@@ -23,6 +22,10 @@ public class RectangleObject extends GraphicalObject {
     public RectangleObject(Color col, int x, int y, int width, int height) {
         this.col = col;
         r = new Rectangle(x, y, width, height);
+        coords[0] = r.x;
+        coords[1] = r.y;
+        coords[2] = r.x + r.width;
+        coords[3] = r.y + r.height;
     }
 
     @Override

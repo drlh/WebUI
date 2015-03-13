@@ -107,7 +107,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
                     GraphicalObject s = vec.get(i);
                     Rectangle r = s.getR();
                     if (s.contains(startPoint)) {
-                       // System.out.println(s.getMapCode());
+                        // System.out.println(s.getMapCode());
                         currentShape = s;
                         currentRect = r;
                         break;
@@ -138,6 +138,10 @@ public class ImageMapPanel extends JPanel implements ActionListener,
 
         switch (tool) {
             case SQUARE_TOOL:
+                s = new SquareObject(getColor(), r.x, r.y, r.width, r.height);
+                System.out.println(s.getMapCode());
+                break;
+            case RECTANGLE_TOOL:
                 s = new RectangleObject(getColor(), r.x, r.y, r.width, r.height);
                 System.out.println(s.getMapCode());
                 break;
@@ -187,7 +191,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
             s.draw(gr);
         }
 
-        if ((tool == SQUARE_TOOL || tool == CIRCLE_TOOL || tool == TRIANGLE_TOOL || tool == HEXAGON_TOOL || tool == PENTAGON_TOOL)
+        if ((tool == SQUARE_TOOL || tool == CIRCLE_TOOL || tool == RECTANGLE_TOOL || tool == TRIANGLE_TOOL || tool == HEXAGON_TOOL || tool == PENTAGON_TOOL)
                 && startPoint != null && currentPoint != null) {
             Rectangle r = calcRect();
             gr.setStroke(stroke);
