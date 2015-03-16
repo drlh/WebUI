@@ -42,7 +42,19 @@ public class SquareObject extends GraphicalObject{
 
     @Override
     public String getMapCode() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              String c = "";
+        if (getAlt() == "") {
+            c += "<area";
+        } else {
+            c += "<area alt=\"" + getAlt() + "\"";
+        }
+        if (getHref() == "") {
+            c += " nohref";
+        } else {
+            c += "\" href=\"" + getHref();
+        }
+        c += " coords=\"" + getCoordinates() + "\" shape=\"poly\">";
+        return c;
     }
 
     @Override

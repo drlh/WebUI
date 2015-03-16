@@ -36,7 +36,19 @@ public class HexagonObject extends GraphicalObject {
 
     @Override
     public String getMapCode() {
-        return "";
+              String c = "";
+        if (getAlt() == "") {
+            c += "<area";
+        } else {
+            c += "<area alt=\"" + getAlt() + "\"";
+        }
+        if (getHref() == "") {
+            c += " nohref";
+        } else {
+            c += "\" href=\"" + getHref();
+        }
+        c += " coords=\"" + getCoordinates() + "\" shape=\"poly\">";
+        return c;
     }
 
     @Override

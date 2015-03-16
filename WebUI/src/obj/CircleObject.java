@@ -23,8 +23,19 @@ public class CircleObject extends GraphicalObject {
 
     @Override
     public String getMapCode() {
-        String mapcode = "<area alt=\"" + getAlt() + "\" href=\"" + getHref() + "\" coords=\"" + getCoordinates() + "\" shape=\"circle\">";
-        return mapcode;
+        String c = "";
+        if (getAlt() == "") {
+            c += "<area";
+        } else {
+            c += "<area alt=\"" + getAlt() + "\"";
+        }
+        if (getHref() == "") {
+            c += " nohref";
+        } else {
+            c += "\" href=\"" + getHref();
+        }
+        c += " coords=\"" + getCoordinates() + "\" shape=\"circle\">";
+        return c;
     }
 
     @Override

@@ -58,7 +58,19 @@ public class RectangleObject extends GraphicalObject {
 
     @Override
     public String getMapCode() {
-        return "<area alt=\"" + getAlt() + "\" href=\"" + getHref() + " coords=\"" + getCoordinates() + "\" shape=\"rect\">";
+        String c = "";
+        if (getAlt() == "") {
+            c += "<area";
+        } else {
+            c += "<area alt=\"" + getAlt() + "\"";
+        }
+        if (getHref() == "") {
+            c += " nohref";
+        } else {
+            c += "\" href=\"" + getHref();
+        }
+        c += " coords=\"" + getCoordinates() + "\" shape=\"rect\">";
+        return c;
     }
 
     @Override

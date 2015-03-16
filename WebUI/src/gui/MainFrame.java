@@ -53,7 +53,6 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         jTBtn_Circle = new javax.swing.JToggleButton();
         jTBtn_Drag = new javax.swing.JToggleButton();
         jTBtn_Square = new javax.swing.JToggleButton();
-        jTBtn_Ellipse = new javax.swing.JToggleButton();
         jTBtn_Hexagon = new javax.swing.JToggleButton();
         jTBtn_Rectangle = new javax.swing.JToggleButton();
         jBtn_ColorChooser = new javax.swing.JButton();
@@ -120,15 +119,6 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
             }
         });
 
-        jBtnGroup_Tools.add(jTBtn_Ellipse);
-        jTBtn_Ellipse.setToolTipText("Ellipse");
-        jTBtn_Ellipse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTBtn_Ellipse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTBtn_EllipseActionPerformed(evt);
-            }
-        });
-
         jBtnGroup_Tools.add(jTBtn_Hexagon);
         jTBtn_Hexagon.setToolTipText("Sechseck");
         jTBtn_Hexagon.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -187,24 +177,21 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPan_EditToolsLayout.createSequentialGroup()
                         .addComponent(jTBtn_Drag, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
+                        .addGap(10, 10, 10)
                         .addComponent(jTBtn_Square, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(10, 10, 10)
                         .addComponent(jTBtn_Rectangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPan_EditToolsLayout.createSequentialGroup()
-                        .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)
-                        .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTBtn_Triangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                        .addComponent(jTBtn_Triangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
                         .addComponent(jTBtn_Pentagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(10, 10, 10)
                         .addComponent(jTBtn_Hexagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)))
-                .addGap(20, 20, 20))
+                    .addGroup(jPan_EditToolsLayout.createSequentialGroup()
+                        .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPan_EditToolsLayout.setVerticalGroup(
             jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,18 +203,15 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
                     .addComponent(jTBtn_Rectangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTBtn_Ellipse, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTBtn_Triangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTBtn_Triangle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTBtn_Pentagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTBtn_Hexagon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPan_EditToolsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTBtn_Circle, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBtn_ColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane_ObjectList, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPan_EditTools, java.awt.BorderLayout.LINE_START);
@@ -335,10 +319,6 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         updateTools(jTabPane_ImageMaps);
     }//GEN-LAST:event_jTBtn_CircleActionPerformed
 
-    private void jTBtn_EllipseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_EllipseActionPerformed
-        updateTools(jTabPane_ImageMaps);
-    }//GEN-LAST:event_jTBtn_EllipseActionPerformed
-
     private void jTBtn_TriangleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBtn_TriangleActionPerformed
         updateTools(jTabPane_ImageMaps);
     }//GEN-LAST:event_jTBtn_TriangleActionPerformed
@@ -410,7 +390,6 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JToggleButton jTBtn_Circle;
     private javax.swing.JToggleButton jTBtn_Drag;
-    private javax.swing.JToggleButton jTBtn_Ellipse;
     private javax.swing.JToggleButton jTBtn_Hexagon;
     private javax.swing.JToggleButton jTBtn_Pentagon;
     private javax.swing.JToggleButton jTBtn_Rectangle;
@@ -443,9 +422,6 @@ public class MainFrame extends javax.swing.JFrame implements ChangeListener {
         }
         if (jTBtn_Drag.isSelected()) {
             imageMaps.get(i).setTool(ImageMapPanel.ARROW_TOOL);
-        }
-        if (jTBtn_Ellipse.isSelected()) {
-            imageMaps.get(i).setTool(ImageMapPanel.ELLIPSE_TOOL);
         }
         if (jTBtn_Triangle.isSelected()) {
             imageMaps.get(i).setTool(ImageMapPanel.TRIANGLE_TOOL);

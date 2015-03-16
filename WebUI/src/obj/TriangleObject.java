@@ -48,7 +48,19 @@ public class TriangleObject extends GraphicalObject {
 
     @Override
     public String getMapCode() {
-        return "<area alt=\"" + getAlt() + "\" href=\"" + getHref() + " coords=\"" + getCoordinates() + "\" shape=\"poly\"> ";
+        String c = "";
+        if (getAlt() == "") {
+            c += "<area";
+        } else {
+            c += "<area alt=\"" + getAlt() + "\"";
+        }
+        if (getHref() == "") {
+            c += " nohref";
+        } else {
+            c += "\" href=\"" + getHref();
+        }
+        c += " coords=\"" + getCoordinates() + "\" shape=\"poly\">";
+        return c;
     }
 
     @Override
