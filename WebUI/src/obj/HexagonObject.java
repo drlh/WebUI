@@ -8,35 +8,44 @@ package obj;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Rectangle;
 
 /**
  *
- * @author PR050736
+ * @author Fabian Angst
  */
 public class HexagonObject extends GraphicalObject {
 
+    private int n, rad;
+    private double angle;
+    private int[] x = new int[5];
+    private int[] y = new int[5];
+    private double dv = 5 * 2 * Math.PI / 360;
+    private double turn = 0.0;
+
+    int[] coords = new int[12];
+
     public HexagonObject(Color col, int x, int y, int width, int height) {
-   
+        this.col = col;
+        r = new Rectangle(x, y, width, height);
+        n = 5;
+        rad = (width + height) / 2;
+        angle = 2 * Math.PI / n;
     }
 
     @Override
-    public String getCoordinates() {
+    public String getCoordinateString() {
         return "";
     }
 
     @Override
-    public void setCoordinates(String coordinate) {
-
-    }
-
-    @Override
     public void draw(Graphics2D g) {
-
+        
     }
 
     @Override
     public String getMapCode() {
-              String c = "";
+        String c = "";
         if (getAlt() == "") {
             c += "<area";
         } else {
@@ -47,7 +56,7 @@ public class HexagonObject extends GraphicalObject {
         } else {
             c += "\" href=\"" + getHref();
         }
-        c += " coords=\"" + getCoordinates() + "\" shape=\"poly\">";
+        c += " coords=\"" + getCoordinateString()+ "\" shape=\"poly\">";
         return c;
     }
 
