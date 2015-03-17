@@ -21,7 +21,7 @@ public class TriangleObject extends GraphicalObject {
     }
 
     @Override
-    public String getCoordinates() {
+    public String getCoordinateString() {
         getTriangle();
         String c = "";
         for (int i = 0; i < coords.length; i++) {
@@ -34,13 +34,17 @@ public class TriangleObject extends GraphicalObject {
         return c;
     }
 
-    @Override
+   
     public void setCoordinates(String coordinate) {
 
     }
 
     @Override
     public void draw(Graphics2D g) {
+        if (isSelected() == true) {
+            g.setStroke(getStroke());
+            g.drawRect(r.x, r.y, r.width, r.height);
+        }
         g.setColor(col);
         Polygon p = getTriangle();
         g.fillPolygon(p);
@@ -59,7 +63,7 @@ public class TriangleObject extends GraphicalObject {
         } else {
             c += "\" href=\"" + getHref();
         }
-        c += " coords=\"" + getCoordinates() + "\" shape=\"poly\">";
+        c += " coords=\"" + getCoordinateString() + "\" shape=\"poly\">";
         return c;
     }
 

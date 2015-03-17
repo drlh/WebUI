@@ -34,24 +34,10 @@ public class CircleObject extends GraphicalObject {
         } else {
             c += "\" href=\"" + getHref();
         }
-        c += " coords=\"" + getCoordinates() + "\" shape=\"circle\">";
+        c += " coords=\"" + getCoordinateString() + "\" shape=\"circle\">";
         return c;
     }
 
-    @Override
-    public String getCoordinates() {
-        String c = "";
-        for (int i = 0; i < coords.length; i++) {
-            if ((i + 1) == coords.length) {
-                c += coords[i];
-            } else {
-                c += coords[i] + ",";
-            }
-        }
-        return c;
-    }
-
-    @Override
     public void setCoordinates(String coordinates) {
         String[] split = coordinates.split(",");
         x = Integer.parseInt(split[0]);
@@ -64,6 +50,15 @@ public class CircleObject extends GraphicalObject {
 
     @Override
     public void draw(Graphics2D g) {
+        if (isSelected() == true) {
+            g.setColor(Color.BLACK);
+            g.setStroke(getStroke());
+            g.drawRect(r.x, r.y, r.width, r.height);
+            g.fillRect(r.x - 2, r.y - 2, 4, 4);
+            g.fillRect(r.x - 2 + r.width, r.y - 2, 4, 4);
+            g.fillRect(r.x - 2, r.y - 2 + r.height, 4, 4);
+            g.fillRect(r.x - 2 + r.width, r.y - 2 + r.height, 4, 4);
+        }
         g.setColor(getColor());
         g.fillOval(r.x, r.y, r.width, r.height);
 
@@ -77,7 +72,21 @@ public class CircleObject extends GraphicalObject {
 
     @Override
     public String getObjectInfo() {
-        return "Kreis: Rad[" + rad + "] Centerpos[" + x + "," + y + "]";
+        return "Kreis - " + getHref() + " -Rad[" + rad + "] Centerpos[" + x + "," + y + "]";
+    }
+
+    @Override
+    public String getCoordinateString() {
+        String c = "";
+        for (int i = 0; i < coords.length; i++) {
+            if ((i + 1) == coords.length) {
+                c += coords[i];
+            } else {
+                c += coords[i] + ",";
+            }
+        }
+        return c;
+
     }
 
 }

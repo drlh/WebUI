@@ -40,9 +40,11 @@ public class ImageMapPanel extends JPanel implements ActionListener,
     private Point currentPoint = null;
     private Rectangle currentRect = null;
     private GraphicalObject currentShape = null;
-    private BasicStroke stroke = new BasicStroke(1.0f, BasicStroke.CAP_BUTT,
+    public BasicStroke stroke = new BasicStroke(1.0f, BasicStroke.CAP_BUTT,
             BasicStroke.JOIN_MITER, 1.0f, new float[]{1.0f, 1.0f}, 0.0f);
     private Vector<GraphicalObject> vec = new Vector<GraphicalObject>();
+
+    //Kontextmenu je Objekt
     private JPopupMenu popup = new JPopupMenu();
     private JMenuItem moveTop = new JMenuItem("Nach vorne");
     private JMenuItem moveBack = new JMenuItem("Nach hinten");
@@ -93,7 +95,12 @@ public class ImageMapPanel extends JPanel implements ActionListener,
 
     @Override
     public void mouseMoved(MouseEvent e) {
+        int button = e.getButton();
+        if (button == MouseEvent.BUTTON1) {
 
+            currentShape.select();
+
+        }
     }
 
     @Override
@@ -106,6 +113,12 @@ public class ImageMapPanel extends JPanel implements ActionListener,
                 for (int i = vec.size() - 1; i >= 0; i--) {
                     GraphicalObject s = vec.get(i);
                     Rectangle r = s.getR();
+                    if (s.isSelected()) {
+                        s.unSelect();
+                    } else {
+                        s.select();
+                    }
+                    repaint();
                     if (s.contains(startPoint)) {
                         // System.out.println(s.getMapCode());
                         currentShape = s;
@@ -237,6 +250,7 @@ public class ImageMapPanel extends JPanel implements ActionListener,
             Rectangle r = (Rectangle) currentRect.clone();
             r.translate(offX, offY);
             currentShape.setR(r);
+
         }
         repaint();
 

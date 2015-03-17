@@ -35,20 +35,15 @@ public class PentagonObject extends GraphicalObject {
     }
 
     @Override
-    public String getCoordinates() {
+    public String getCoordinateString() {
         return "";
-    }
-
-    @Override
-    public void setCoordinates(String coordinate) {
-
     }
 
     private Polygon getPentagon() {
         Polygon p = new Polygon();
-        int xnull = r.x;
+        int xnull = r.x / 2;
         int ynull = r.y / 2;
-        turn = 1.5707963267948698;
+        turn = 1.5707963267948698; //trial an error selected 
 
         for (int i = 0; i < n; i++) {
             double v = i * angle - turn;
@@ -56,23 +51,16 @@ public class PentagonObject extends GraphicalObject {
             y[i] = ynull + (int) Math.round(rad * Math.sin(v));
             p.addPoint(x[i], y[i]);
         }
-
-//        p.addPoint(r.x + r.width / 2, r.y);
-//        coords[0] = r.x + r.width / 2;
-//        coords[1] = r.y;
-//        p.addPoint(r.x, r.y + r.height);
-//        coords[2] = r.x;
-//        coords[3] = r.y + r.height;
-//        p.addPoint(r.x + r.width, r.y + r.height);
-//        coords[4] = r.x + r.width;
-//        coords[5] = r.y + r.height;
         return p;
     }
 
     @Override
     public void draw(Graphics2D g) {
+        if (isSelected() == true) {
+            g.setStroke(getStroke());
+            g.drawRect(r.x, r.y, r.width, r.height);
+        }
         Polygon p = getPentagon();
-
         g.setColor(col);
         g.fillPolygon(p);
     }
@@ -90,7 +78,7 @@ public class PentagonObject extends GraphicalObject {
         } else {
             c += "\" href=\"" + getHref();
         }
-        c += " coords=\"" + getCoordinates() + "\" shape=\"poly\">";
+        c += " coords=\"" + getCoordinateString() + "\" shape=\"poly\">";
         return c;
     }
 

@@ -29,7 +29,7 @@ public class RectangleObject extends GraphicalObject {
     }
 
     @Override
-    public String getCoordinates() {
+    public String getCoordinateString() {
         String c = "";
         for (int i = 0; i < coords.length; i++) {
             if ((i + 1) == coords.length) {
@@ -42,12 +42,11 @@ public class RectangleObject extends GraphicalObject {
     }
 
     @Override
-    public void setCoordinates(String coordinate) {
-
-    }
-
-    @Override
     public void draw(Graphics2D g) {
+        if (isSelected() == true) {
+            g.setStroke(getStroke());
+            g.drawRect(r.x, r.y, r.width, r.height);
+        }
         g.setColor(col);
         g.fillRect(r.x, r.y, r.width, r.height);
         coords[0] = r.x;
@@ -69,7 +68,7 @@ public class RectangleObject extends GraphicalObject {
         } else {
             c += "\" href=\"" + getHref();
         }
-        c += " coords=\"" + getCoordinates() + "\" shape=\"rect\">";
+        c += " coords=\"" + getCoordinateString() + "\" shape=\"rect\">";
         return c;
     }
 

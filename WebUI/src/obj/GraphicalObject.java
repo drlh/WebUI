@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.*;
 import java.io.Serializable;
-import javax.swing.JPopupMenu;
 
 /**
  *
@@ -21,12 +20,9 @@ public abstract class GraphicalObject implements Serializable {
     protected Rectangle r;
     private String href = "";
     private String alt = "";
-    private int[] coords;
-
-//    public GraphicalObject(Color col, int x, int y, int width, int height) {
-//        this.col = col;
-//        r = new Rectangle(x, y, width, height);
-//    }
+    private boolean sel = false;
+    private BasicStroke stroke = new BasicStroke(1.4f, BasicStroke.CAP_BUTT,
+            BasicStroke.JOIN_MITER, 1.4f, new float[]{1.4f, 1.4f}, 0.4f);
 
     public abstract String getObjectInfo();
 
@@ -54,9 +50,7 @@ public abstract class GraphicalObject implements Serializable {
         this.col = col;
     }
 
-    public abstract String getCoordinates();
-
-    public abstract void setCoordinates(String coordinate); //each split by ","
+    public abstract String getCoordinateString();
 
     public abstract void draw(Graphics2D g);
 
@@ -72,4 +66,19 @@ public abstract class GraphicalObject implements Serializable {
         this.r = r;
     }
 
+    public void select() {
+        sel = true;
+    }
+
+    public void unSelect() {
+        sel = false;
+        }
+
+    public boolean isSelected() {
+        return sel;
+    }
+
+    public BasicStroke getStroke() {
+        return stroke;
+    }
 }

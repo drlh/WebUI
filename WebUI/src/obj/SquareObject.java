@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package obj;
 
 import java.awt.Color;
@@ -14,24 +13,14 @@ import java.awt.Point;
  *
  * @author PR050736
  */
-public class SquareObject extends GraphicalObject{
+public class SquareObject extends GraphicalObject {
 
     public SquareObject(Color col, int x, int y, int width, int height) {
-   
+
     }
 
     @Override
     public String getObjectInfo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String getCoordinates() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void setCoordinates(String coordinate) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -42,7 +31,7 @@ public class SquareObject extends GraphicalObject{
 
     @Override
     public String getMapCode() {
-              String c = "";
+        String c = "";
         if (getAlt() == "") {
             c += "<area";
         } else {
@@ -53,7 +42,7 @@ public class SquareObject extends GraphicalObject{
         } else {
             c += "\" href=\"" + getHref();
         }
-        c += " coords=\"" + getCoordinates() + "\" shape=\"poly\">";
+        c += " coords=\"" + getCoordinateString() + "\" shape=\"poly\">";
         return c;
     }
 
@@ -61,5 +50,10 @@ public class SquareObject extends GraphicalObject{
     public boolean contains(Point p) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public String getCoordinateString() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
